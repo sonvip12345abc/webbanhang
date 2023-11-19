@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Product1",
+        "price": "100",
+        "description": "no description",
+        "ratings": 4.0,
+        "images": [
+            {
+                "public_id": "products/1",
+                "url": "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/HLC_New_logo_5.1_Products__BAC_XIU.jpg"
+            }
+        ],
+        "category": "Electronics",
+        "seller": "Me",
+        "stock": 50,
+        "numOfReviews": 32,
+        "reviews": []
+    }
+]
