@@ -8,7 +8,9 @@ const ErrorHandler = require('../utils/errorHandler');
 const sendToken = require('../utils/jwtToken');
 const sendEmail=require('../utils/sendEmail');
 
-const crypto=require('crypto')
+
+const crypto=require('crypto');
+const { send } = require('process');
 
 //Register a user => /api/v1/register
 
@@ -121,6 +123,31 @@ exports.resetPassword=catchAsyncErrors(async(req,res,next)=>{
     await user.save();
 
     sendToken(user,200,res);
+})
+//Get currently logged in user details=> /api/v1/me
+exports.getUserProfile=catchAsyncErrors(async(req,res,next)=>{
+    const user=await User.findById(req.user.id);
+
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+//Update/Change password=>/api/v1/password/update
+exports.updatePassword=catchAsyncErrors(async(req,res,next)=>{
+    const user=await User.findById(req.user.id).select('+password');
+
+    //Check precious user password
+    const isMatched=await user.comparePassword(rq.body.oldpassword)
+    if(!isMatched){
+        return next(new ErrorHandler('Old password is incorrect',400))
+    }
+    user.password=req.body.password;
+
+    await user.save();
+
+    sendToken(user,200,res)
+
 })
 
 //Logout user=>/api/v1/logout

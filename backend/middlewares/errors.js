@@ -1,4 +1,4 @@
-const ErrorHandle=require('../utils/errorHandler');
+const ErrorHandler=require('../utils/errorHandler')
 
 
 module.exports=(err,req,res,next)=>{
@@ -11,6 +11,7 @@ module.exports=(err,req,res,next)=>{
             stack:err.stack
         })
     }
+ 
 
     res.status(err.statusCode).json({
         success:false,
