@@ -1,22 +1,23 @@
-const nodemailer=require('nodemailer');
-const { options } = require('../app');
+const nodemailer = require('nodemailer');
 
-const sendEmail=async options=>{
+const sendEmail = async options => {
     const transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         auth: {
-          user: "4da4eb92e23d6a",
-          pass: "74c82022d7b979"
+            user: process.env.SMTP_EMAIL,
+            pass: process.env.SMTP_PASSWORD
         }
-      });
+    });
 
-      const message={
-        from:`${process.env.SMTP_FROM_NAME}<${process.env.SMTP_FROM_EMAIL}>`,
-        to:options.email,
-        subject:options.subject,
-        text:options.message
-      }
-      await transporter.sendMail(message)
+    const message = {
+        from: `${process.env.SMTP_FROM_NAME} <${process.env.SMTP_FROM_EMAIL}>`,
+        to: options.email,
+        subject: options.subject,
+        text: options.message
+    }
+
+    await transporter.sendMail(message)
 }
-module.exports=sendEmail;
+
+module.exports = sendEmail;
