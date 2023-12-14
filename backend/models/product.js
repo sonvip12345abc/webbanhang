@@ -44,6 +44,7 @@ const productSchema = new mongoose.Schema({
                 'Accessories',
                 'Headphones',
                 'Food',
+                "Books",
                 'Clothes/Shoes',
                 'Beauty/Health',
                 'Sports',
