@@ -136,9 +136,9 @@ const Home = ({ match }) => {
                                                         >
                                                             <div className="rating-outer">
                                                                 <div className="rating-inner"
-                                                                     style={{
-                                                                         width: `${star * 20}%`
-                                                                     }}
+                                                                    style={{
+                                                                        width: `${star * 20}%`
+                                                                    }}
                                                                 >
                                                                 </div>
                                                             </div>
@@ -159,10 +159,10 @@ const Home = ({ match }) => {
                                     </div>
                                 </Fragment>
                             ) : (
-                                products?.map(product => (
-                                    <Product key={product._id} product={product} col={3} />
-                                ))
-                            )}
+                                    products?.map(product => (
+                                        <Product key={product._id} product={product} col={3} />
+                                    ))
+                                )}
 
                         </div>
                     </section>
