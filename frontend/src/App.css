@@ -27,7 +27,7 @@ body {
 }
 
 nav {
-  background-color: #232f3e;
+  background-color: #392e2e;
   padding: 1rem 1rem;
 }
 
@@ -116,10 +116,13 @@ nav {
 
 /* Footer */
 footer {
-  margin-top: 8rem;
-  color: grey;
-  bottom: 0;
-  width: 100%;
+  
+    margin-top: 8rem;
+    color: grey;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+  
 }
 
 /* Ratings */
