@@ -5,7 +5,7 @@ const catchAsyncErrors = require('../middlewares/catchAsyncErrors')
 const APIFeatures = require('../utils/apiFeatures')
 const cloudinary = require('cloudinary')
 
-// Create new product   =>   /api/v1/admin/product/new
+// Create new products   =>   /api/v1/admin/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
     let images = []
@@ -98,7 +98,7 @@ exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
 
 })
 
-// Update Product   =>   /api/v1/admin/product/:id
+// Update Products   =>   /api/v1/admin/product/:id
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
     let product = await Product.findById(req.params.id);
@@ -154,7 +154,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
 })
 
-// Delete Product   =>   /api/v1/admin/product/:id
+// Delete Products   =>   /api/v1/admin/product/:id
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
     const product = await Product.findById(req.params.id);
@@ -179,7 +179,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 
-// Create new review   =>   /api/v1/review
+// Create new reviews   =>   /api/v1/review
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
 
     const { rating, comment, productId } = req.body;
@@ -231,7 +231,7 @@ exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
-// Delete Product Review   =>   /api/v1/reviews
+// Delete Product Reviews   =>   /api/v1/reviews
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
 
     const product = await Product.findById(req.query.productId);
