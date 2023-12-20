@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 }
 
 
-// Middleware to handle error
+// Middleware to handle errors
 app.use(errorMiddleware);
 
 module.exports = app
