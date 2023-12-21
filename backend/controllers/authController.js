@@ -29,7 +29,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         }
     })
 
-    sendToken(user, 200, res)
+    sendToken(user, 200, res);
 
 })
 
@@ -40,11 +40,11 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     // Checks if email and password is entered by user
     if (!email || !password) {
         return res.status(401).json({ success: false, message: 'Please enter email & password' });
-       // return next(new ErrorHandler('Please enter email & password', 400))
+       // return next(new ErrorHandler('Please enter email & password', 400;
     }
 
     // Finding user in database
-    const user = await User.findOne({ email }).select('+password')
+    const user = await User.findOne({ email }).select('+password;
 
     if (!user) {
         return res.status(401).json({ success: false, message: 'Account not found' });
@@ -102,7 +102,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
         await user.save({ validateBeforeSave: false });
 
-        return next(new ErrorHandler(error.message, 500))
+        return next(new ErrorHandler(error.message, 500));
     }
 
 })
@@ -119,12 +119,12 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     })
 
     if (!user) {
-        return next(new ErrorHandler('Password reset token is invalid or has been expired', 400))
+        return next(new ErrorHandler('Password reset token is invalid or has been expired', 400));
     }
 
     if (req.body.password !== req.body.confirmPassword) {
         return res.status(401).json({ success: false, message: 'Password does not match' });
-        //return next(new ErrorHandler('Password does not match', 400))
+        //return next(new ErrorHandler('Password does not match', 400));
     }
 
     // Setup new password
@@ -272,7 +272,7 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.params.id);
 
     if (!user) {
-        return next(new ErrorHandler(`User does not found with id: ${req.params.id}`))
+        return next(new ErrorHandler(`User does not found with id: ${req.params.id}`));
     }
 
     // Remove avatar from cloudinary
