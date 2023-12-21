@@ -1,12 +1,12 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 
 const {
     processPayment,
     sendStripApi
-} = require('../controllers/paymentController')
+} = require('../controllers/paymentController');
 
-const { isAuthenticatedUser } = require('../middlewares/auth')
+const { isAuthenticatedUser } = require('../middlewares/auth');
 
 //  Payment routes
 router.route('/payment/process').post(isAuthenticatedUser, processPayment);
