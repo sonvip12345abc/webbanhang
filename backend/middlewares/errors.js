@@ -22,14 +22,14 @@ module.exports = (err, req, res, next) => {
 
         // Wrong Mongoose Object ID Error
         if (err.name === 'CastError') {
-            const message = `Resource not found. Invalid: ${err.path}`
-            error = new ErrorHandler(message, 400)
+            const message = `Resource not found. Invalid: ${err.path}`;
+            error = new ErrorHandler(message, 400);
         }
 
         // Handling Mongoose Validation Error
         if (err.name === 'ValidationError') {
             const message = Object.values(err.errors).map(value => value.message);
-            error = new ErrorHandler(message, 400)
+            error = new ErrorHandler(message, 400);
         }
 
         // Handling Mongoose duplicate key errors
@@ -55,5 +55,4 @@ module.exports = (err, req, res, next) => {
             message: error.message || 'Internal Server Error'
         })
     }
-
 }
