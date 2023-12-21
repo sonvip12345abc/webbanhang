@@ -12,40 +12,10 @@ const orderSchema = mongoose.Schema({
         },
         phoneNo: {
             type: String,
-            required: true
-        },
-        postalCode: {
-            type: String,
-            required: true
-        },
-        country: {
-            type: String,
-            required: true
-        }
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-    },
-    orderItems: [
-        {
-            name: {
-                type: String,
+        
                 required: true
             },
-            quantity: {
-                type: Number,
-                required: true
-            },
-            image: {
-                type: String,
-                required: true
-            },
-            price: {
-                type: Number,
-                required: true
-            },
+            quantity
             product: {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
