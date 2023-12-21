@@ -17,16 +17,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         crop: "scale"
     })
 
-    const { name, email, password } = req.body;
-
-    const user = await User.create({
-        name,
-        email,
-        password,
-        avatar: {
-            public_id: result.public_id,
-            url: result.secure_url
-        }
+  
     })
 
     sendToken(user, 200, res)
@@ -42,17 +33,6 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
         return res.status(401).json({ success: false, message: 'Please enter email & password' });
        // return next(new ErrorHandler('Please enter email & password', 400))
     }
-
-    // Finding user in database
-    const user = await User.findOne({ email }).select('+password')
-
-    if (!user) {
-        return res.status(401).json({ success: false, message: 'Account not found' });
-        //return next(new ErrorHandler('Invalid Email or Password', 401));
-    }
-
-    // Checks if password is correct or not
-    const isPasswordMatched = await user.comparePassword(password);
 
     if (!isPasswordMatched) {
         return res.status(401).json({ success: false, message: 'Wrong Password' });
