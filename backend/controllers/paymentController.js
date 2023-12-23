@@ -8,12 +8,12 @@ exports.processPayment = catchAsyncErrors(async (req, res, next) => {
         currency: 'usd',
 
         metadata: { integration_check: 'accept_a_payment' }
-    });
+    })
 
     res.status(200).json({
         success: true,
         client_secret: paymentIntent.client_secret
-    });
+    })
 })
 
 
@@ -22,5 +22,5 @@ exports.sendStripApi = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         stripeApiKey: process.env.STRIPE_API_KEY
-    });
+    })
 })
