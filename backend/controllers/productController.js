@@ -7,14 +7,14 @@ const cloudinary = require('cloudinary')
 // Create new products   =>   /api/v1/admin/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
-    let images = [];
+    let images = []
     if (typeof req.body.images === 'string') {
         images.push(req.body.images)
     } else {
         images = req.body.images
     }
 
-    let imagesLinks = [];
+    let imagesLinks = []
 
     for (let i = 0; i < images.length; i++) {
         const result = await cloudinary.v2.uploader.upload(images[i], {
@@ -27,10 +27,10 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
         })
     }
 
-    req.body.images = imagesLinks;
-    req.body.user = req.user.id;
+    req.body.images = imagesLinks
+    req.body.user = req.user.id
 
-    const product = await Product.create(req.body);
+    const product = await Product.create(req.body)
 
     res.status(201).json({
         success: true,
@@ -50,11 +50,11 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
         .search()
         .filter()
 
-    let products = await apiFeatures.query.clone();
-    let filteredProductsCount = products.length;
+    let products = await apiFeatures.query.clone()
+    let filteredProductsCount = products.length
 
-    apiFeatures.pagination(resPerPage);
-    products = await apiFeatures.query;
+    apiFeatures.pagination(resPerPage)
+    products = await apiFeatures.query
 
 
     res.status(200).json({
