@@ -69,6 +69,8 @@ nav {
 /* Home page */
 #products_heading {
   margin-top: 1.8rem;
+  cursor: pointer;
+  margin-bottom: 1.8rem;
 }
 
 .card {
@@ -617,4 +619,10 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+.pl-1{
+  display: flex;
+  background: #1F568B;
+  list-style-type: none;
+  text-align: center;
 }
