@@ -3,6 +3,8 @@ import Pagination from 'react-js-pagination'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css';
 
+
+
 import MetaData from './layout/MetaData'
 import Product from './product/Product'
 import Loader from './layout/Loader'
@@ -20,6 +22,7 @@ const Home = ({ match }) => {
     const [price, setPrice] = useState([1, 1000])
     const [category, setCategory] = useState('')
     const [rating, setRating] = useState(0)
+    const [showAllProducts, setShowAllProducts] = useState(true);
 
     const categories = [
         'Electronics',
@@ -61,6 +64,12 @@ const Home = ({ match }) => {
     if (keyword) {
         count = filteredProductsCount
     }
+    const handleShowAllProducts = () => {
+        setCategory(''); 
+        setShowAllProducts(true);
+    };
+
+  
 
     return (
         <Fragment>
@@ -68,7 +77,35 @@ const Home = ({ match }) => {
                 <Fragment>
                     <MetaData title={'Buy Best Products Online'} />
 
-                    <h1 id="products_heading">Latest Products</h1>
+                    <h1 
+                        id="products_heading"
+                        onClick={handleShowAllProducts}
+                        >
+                        All product
+                    </h1>
+                    
+                   
+
+                    <ul className="pl-1">
+                        {categories?.map(category => (
+                            <li
+                                 style={{
+                                    cursor: 'pointer',
+                                    padding:'10px',
+                                    color:'#f1f1f1',
+                                    display:'inline-block',
+                                    width: '120px',
+                                    height: '40px',
+                                    margin:'2px',
+                                    listStyleType: 'none'
+                                        }}
+                                            key={category}
+                                                onClick={() => setCategory(category)}
+                                         >
+                                         {category}
+                            </li>
+                             ))}
+                     </ul>
 
                     <section id="products" className="container mt-5">
                         <div className="row">
@@ -80,7 +117,7 @@ const Home = ({ match }) => {
                                             <Range
                                                 marks={{
                                                     1: `$1`,
-                                                    1000: `$1000`
+                                                    10000: `$1000`
                                                 }}
                                                 min={1}
                                                 max={1000}
@@ -94,30 +131,7 @@ const Home = ({ match }) => {
                                                 onChange={price => setPrice(price)}
                                             />
 
-                                            <hr className="my-5" />
-
-                                            <div className="mt-5">
-                                                <h4 className="mb-3">
-                                                    Categories
-                                                </h4>
-
-                                                <ul className="pl-0">
-                                                    {categories?.map(category => (
-                                                        <li
-                                                            style={{
-                                                                cursor: 'pointer',
-                                                                listStyleType: 'none'
-                                                            }}
-                                                            key={category}
-                                                            onClick={() => setCategory(category)}
-                                                        >
-                                                            {category}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                            <hr className="my-3" />
+                                           
 
                                             <div className="mt-5">
                                                 <h4 className="mb-3">
