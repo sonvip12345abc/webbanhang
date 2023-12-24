@@ -7,15 +7,14 @@ const cloudinary = require('cloudinary')
 // Create new products   =>   /api/v1/admin/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
-    let images = []
+    let images = [];
     if (typeof req.body.images === 'string') {
         images.push(req.body.images)
     } else {
         images = req.body.images
     }
 
-    let imagesLinks = []
-
+    let imagesLinks = [];
     for (let i = 0; i < images.length; i++) {
         const result = await cloudinary.v2.uploader.upload(images[i], {
             folder: 'products'
@@ -24,7 +23,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
         imagesLinks.push({
             public_id: result.public_id,
             url: result.secure_url
-        })
+        });
     }
 
     req.body.images = imagesLinks
@@ -37,8 +36,6 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
         product
     })
 })
-
-
 
 // Get all products   =>   /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
@@ -138,8 +135,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
     }
 
-
-
     product = await Product.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
@@ -150,7 +145,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
         success: true,
         product
     })
-
 })
 
 // Delete Products   =>   /api/v1/admin/product/:id
@@ -176,7 +170,6 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     })
 
 })
-
 
 // Create new reviews   =>   /api/v1/review
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
@@ -218,7 +211,6 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     })
 
 })
-
 
 // Get Product Reviews   =>   /api/v1/reviews
 exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
