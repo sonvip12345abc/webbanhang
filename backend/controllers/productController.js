@@ -123,7 +123,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
         for (let i = 0; i < images.length; i++) {
             const result = await cloudinary.v2.uploader.upload(images[i], {
                 folder: 'products'
-            });
+            })
 
             imagesLinks.push({
                 public_id: result.public_id,
