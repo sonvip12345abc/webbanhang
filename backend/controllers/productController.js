@@ -7,14 +7,14 @@ const cloudinary = require('cloudinary')
 // Create new products   =>   /api/v1/admin/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
-    let images = [];
+    let images = []
     if (typeof req.body.images === 'string') {
         images.push(req.body.images)
     } else {
         images = req.body.images
     }
 
-    let imagesLinks = [];
+    let imagesLinks = []
     for (let i = 0; i < images.length; i++) {
         const result = await cloudinary.v2.uploader.upload(images[i], {
             folder: 'products'
@@ -40,8 +40,8 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 // Get all products   =>   /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 4;
-    const productsCount = await Product.countDocuments();
+    const resPerPage = 4
+    const productsCount = await Product.countDocuments()
 
     const apiFeatures = new APIFeatures(Product.find(), req.query)
         .search()
@@ -67,7 +67,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 // Get all products (Admin)  =>   /api/v1/admin/products
 exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const products = await Product.find();
+    const products = await Product.find()
 
     res.status(200).json({
         success: true,
@@ -79,7 +79,7 @@ exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
 // Get single product details   =>   /api/v1/product/:id
 exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
 
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id)
 
     if (!product) {
         return res.status(401).json({ success: false, message: 'Product not found' });
@@ -97,7 +97,7 @@ exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
 // Update Products   =>   /api/v1/admin/product/:id
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
-    let product = await Product.findById(req.params.id);
+    let product = await Product.findById(req.params.id)
 
     if (!product) {
         return res.status(401).json({ success: false, message: 'Product not found' });
