@@ -150,7 +150,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 // Delete Products   =>   /api/v1/admin/product/:id
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id)
 
     if (!product) {
         return res.status(401).json({ success: false, message: 'Product not found' });
