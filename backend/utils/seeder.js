@@ -6,7 +6,7 @@ const products = require('../data/products')
 // Setting dotenv file
 dotenv.config({ path: 'backend/config/config.env' })
 
-connectDatabase();
+connectDatabase()
 
 const seedProducts = async () => {
     try {
@@ -16,12 +16,12 @@ const seedProducts = async () => {
         await Product.insertMany(products);
         console.log('All Products are added');
 
-        process.exit();
+        process.exit()
 
     } catch (error) {
         console.log(error.message);
-        process.exit();
+        process.exit()
     }
 }
 
-seedProducts();
+seedProducts()
