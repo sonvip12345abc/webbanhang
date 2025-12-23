@@ -280,6 +280,7 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     await cloudinary.v2.uploader.destroy(image_id);
 
     await user.deleteOne();
+    //
 
     res.status(200).json({
         success: true,
