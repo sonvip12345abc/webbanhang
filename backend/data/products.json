@@ -3,7 +3,7 @@
         "name" : "JBL Tour One M2",
         "price" : "298",
         "description" : "Wireless Over-Ear Noise Cancelling Headphones (Black), Medium",
-        "ratings" : 4,
+        "ratings" : 4.5,
         "images" : [{
             "public_id" : "products/ddx2fqf3bdratnexyf81s",
             "url" : "https://asset.cloudinary.com/dsnfgt7rf/b38a01fe03f56a497f9b0bf6335ba717"
@@ -12,91 +12,6 @@
         "seller" : "Son",
         "stock" : 50,
         "numOfReviews" : 0,
-        "reviews": []
-    },
-    {
-        "name": "Phin sữa đá",
-        "price": 1.19,
-        "description": "Hương vị cà phê Việt Nam đích thực! Từng hạt cà phê hảo hạng được chọn bằng tay, phối trộn độc đáo giữa hạt Robusta từ cao nguyên Việt Nam, thêm Arabica thơm lừng. Cà phê được pha từ Phin truyền thống, hoà cùng sữa đặc sánh và thêm vào chút đá tạo nên ly Phin Sữa Đá – Đậm Đà Chất Phin.",
-        "ratings": 4,
-        "images": [
-            {
-                "public_id": "products/cq4ssei7rg3lamnqlula",
-                "url": "https://res.cloudinary.com/dgfvlobva/image/upload/v1703003903/products/cq4ssei7rg3lamnqlula.jpg"
-            }
-        ],
-        "category": "Cà phê",
-        "seller": "Lê Đức Thái",
-        "stock": 4,
-        "numOfReviews": 0,
-        "reviews": []
-    },
-    {
-        "name": "Classic Phin Freeze",
-        "price": 2.26,
-        "description": "Thơm ngon đậm đà! Được kết hợp từ cà phê pha Phin truyền thống chỉ có tại Highlands Coffee, cùng với thạch cà phê và đá xay mát lạnh. Trên cùng là lớp kem tươi thơm béo và bột ca cao đậm đà. Món nước hoàn hảo để khởi đầu câu chuyện cùng bạn bè.",
-        "ratings": 0,
-        "images": [
-            {
-                "public_id": "products/cijngsfpxdher5ul5qgz",
-                "url": "https://res.cloudinary.com/dgfvlobva/image/upload/v1703005177/products/cijngsfpxdher5ul5qgz.jpg"
-            }
-        ],
-        "category": "Freeze",
-        "seller": "Lê Đức Thái",
-        "stock": 9,
-        "numOfReviews": 0,
-        "reviews": []
-    },
-    {
-        "name": "Trà Thạch Vải",
-        "price": 1.85,
-        "description": "Một sự kết hợp thú vị giữa trà đen, những quả vải thơm ngon và thạch giòn khó cưỡng, mang đến thức uống tuyệt hảo!",
-        "ratings": 0,
-        "images": [
-            {
-                "public_id": "products/b2xc0vl2paaifeygjv1y",
-                "url": "https://res.cloudinary.com/dgfvlobva/image/upload/v1703005457/products/b2xc0vl2paaifeygjv1y.jpg"
-            }
-        ],
-        "category": "Trà",
-        "seller": "Lê Đức Thái",
-        "stock": 7,
-        "numOfReviews": 0,
-        "reviews": []
-    },
-    {
-        "name": "Bánh Caramel Phô Mai",
-        "price": 1.44,
-        "description": "Ngon khó cưỡng! Bánh phô mai thơm béo được phủ bằng lớp caramel ngọt ngào.",
-        "ratings": 0,
-        "images": [
-            {
-                "public_id": "products/wujioiem8bek1wgjmb7v",
-                "url": "https://res.cloudinary.com/dgfvlobva/image/upload/v1703005918/products/wujioiem8bek1wgjmb7v.jpg"
-            }
-        ],
-        "category": "Khác",
-        "seller": "Lê Đức Thái",
-        "stock": 6,
-        "numOfReviews": 0,
-        "reviews": []
-    },
-    {
-        "name": "Bạc Xỉu Đá",
-        "price": 1.19,
-        "description": "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ “đô\" cà phê nhưng vẫn thơm ngon, chất lừ không kém!",
-        "ratings": 0,
-        "images": [
-            {
-                "public_id": "products/snun0ov08w562eufjceh",
-                "url": "https://res.cloudinary.com/dgfvlobva/image/upload/v1703007069/products/snun0ov08w562eufjceh.jpg"
-            }
-        ],
-        "category": "Cà phê",
-        "seller": "Lê Đức Thái",
-        "stock": 20,
-        "numOfReviews": 0,
         "reviews": []
     }
 ]
