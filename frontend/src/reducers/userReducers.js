@@ -40,7 +40,7 @@ import {
     LOGOUT_FAIL,
     CLEAR_ERRORS
 } from '../constants/userConstants'
-
+//authReducer
 export const authReducer = (state = { user: {} }, action) => {
     switch (action.type) {
 
